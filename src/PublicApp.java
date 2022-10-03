@@ -89,8 +89,12 @@ public class PublicApp {
             switch(choice) {
                 case 1:
                     this.listCrossings();
+                    break;
                 case 2:
+                    //this.searchCrossings();
+                    break;
                 case 3:
+                    //this.sortCrossings();
                     break;
                 case 4:
                     System.out.println("Thank You for using Railway Crossing App");

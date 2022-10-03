@@ -66,6 +66,30 @@ public class GovernmentApp {
 
     }
 
+    void deleteCrossing() {
+        this.scanner.nextLine();
+        System.out.println("Enter Railway Crossing Name: ");
+        String crossingName = this.scanner.nextLine();
+        RailwayCrossing retrievedCrossing = this.controller.fetchCrossing(crossingName);
+        if (retrievedCrossing!=null && this.controller.deleteCrossing(retrievedCrossing)) {
+            System.out.println(retrievedCrossing.getName() + " Deleted Successfully...");
+        } else {
+            System.err.println("Railway Crossing not found");
+        }
+    }
+
+    void searchCrossing() {
+        this.scanner.nextLine();
+        System.out.println("Enter Railway Crossing Name: ");
+        String crossingName = this.scanner.nextLine();
+        RailwayCrossing retrievedCrossing = this.controller.fetchCrossing(crossingName);
+        if (retrievedCrossing!=null) {
+            System.out.println(retrievedCrossing);
+        } else {
+            System.err.println("Railway Crossing not found");
+        }
+    }
+
     void login() {
         User user = new User();
         System.out.println("Enter Email: ");
@@ -100,11 +124,15 @@ public class GovernmentApp {
             switch(choice) {
                 case 1:
                     this.listCrossings();
+                    break;
                 case 2:
-                case 4:
+                    this.searchCrossing();
                     break;
                 case 3:
                     this.addCrossing();
+                    break;
+                case 4:
+                    this.deleteCrossing();
                     break;
                 case 5:
                     this.controller.exportData();

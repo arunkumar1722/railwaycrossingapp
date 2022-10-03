@@ -53,6 +53,10 @@ public class RailwayCrossingController {
         return this.db.retrieve(new RailwayCrossing());
     }
 
+    public RailwayCrossing fetchCrossing(String crossingName) {
+        return (RailwayCrossing) this.db.retrieve(crossingName);
+    }
+
     public int getCrossingsCount() {
         return this.db.getCrossingsCount();
     }
