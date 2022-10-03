@@ -83,7 +83,7 @@ public class DB implements DAO {
 
     public void exportData() {
         try {
-            File file = new File("/Users/ishant/Downloads/users-data");
+            File file = new File("/Users/arunkumarm/Documents/railwaycrossingapp/users-data");
             if (!file.exists()) {
                 file.mkdir();
                 System.out.println("Directory Created by the name of " + file.getName());
@@ -93,7 +93,7 @@ public class DB implements DAO {
 
             while(var3.hasNext()) {
                 String key = (String)var3.next();
-                File userFile = new File("/Users/ishant/Downloads/users-data/", key + ".txt");
+                File userFile = new File("/Users/arunkumarm/Documents/railwaycrossingapp/users-data/", key + ".txt");
                 FileOutputStream stream = new FileOutputStream(userFile);
                 ObjectOutputStream objectStream = new ObjectOutputStream(stream);
                 objectStream.writeObject(this.users.get(key));
@@ -109,14 +109,14 @@ public class DB implements DAO {
 
     public void importData() {
         try {
-            File file = new File("/Users/ishant/Downloads/users-data");
+            File file = new File("/Users/arunkumarm/Documents/railwaycrossingapp/users-data");
             String[] files = file.list();
             String[] var6 = files;
             int var5 = files.length;
 
             for(int var4 = 0; var4 < var5; ++var4) {
                 String fileName = var6[var4];
-                File userFile = new File("/Users/ishant/Downloads/users-data/", fileName);
+                File userFile = new File("/Users/arunkumarm/Documents/railwaycrossingapp/users-data/", fileName);
                 FileInputStream stream = new FileInputStream(userFile);
                 ObjectInputStream objectStream = new ObjectInputStream(stream);
                 User user = (User)objectStream.readObject();
