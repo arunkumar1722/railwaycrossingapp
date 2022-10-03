@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b2cd7e5-88eb-43ac-89a2-75e10a88db43" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Fbas1eIQhpoUuAcMV6NDwkiejK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="RailwayCrossingApp" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RailwayCrossingApp" />
+      <module name="railwaycrossingapp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="RailwayCrossingApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b2cd7e5-88eb-43ac-89a2-75e10a88db43" name="Default Changelist" comment="" />
+      <created>1664763440138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664763440138</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1664763998722">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.951@0.25.1680.951" timestamp="1664763998722" />
+    <state width="1358" height="247" key="GridCell.Tab.0.bottom" timestamp="1664764894612">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1358" height="247" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1664764894612" />
+    <state width="1358" height="247" key="GridCell.Tab.0.center" timestamp="1664764894612">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1358" height="247" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1664764894612" />
+    <state width="1358" height="247" key="GridCell.Tab.0.left" timestamp="1664764894611">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1358" height="247" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1664764894611" />
+    <state width="1358" height="247" key="GridCell.Tab.0.right" timestamp="1664764894612">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1358" height="247" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1664764894612" />
+    <state x="349" y="143" key="SettingsEditor" timestamp="1664765031216">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="349" y="143" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1664765031216" />
+    <state x="517" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1664765064851">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="517" y="336" key="com.intellij.ide.util.TipDialog/0.25.1680.951@0.25.1680.951" timestamp="1664765064851" />
+    <state x="503" y="264" width="674" height="486" key="find.popup" timestamp="1664764443808">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="503" y="264" width="674" height="486" key="find.popup/0.25.1680.951@0.25.1680.951" timestamp="1664764443808" />
+  </component>
+</project>
