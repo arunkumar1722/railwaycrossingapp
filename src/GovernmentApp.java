@@ -90,6 +90,20 @@ public class GovernmentApp {
         }
     }
 
+    void updateStatus() {
+        this.scanner.nextLine();
+        System.out.println("Enter Railway Crossing Name: ");
+        String crossingName = this.scanner.nextLine();
+        RailwayCrossing retrievedCrossing = this.controller.fetchCrossing(crossingName);
+        if (retrievedCrossing!=null) {
+            retrievedCrossing.flipStatus();
+            System.out.println("Switched Railway Crossing Status to " + retrievedCrossing.getStatus());
+            System.out.println(retrievedCrossing);
+        } else {
+            System.err.println("Railway Crossing not found");
+        }
+    }
+
     void login() {
         User user = new User();
         System.out.println("Enter Email: ");
@@ -113,12 +127,13 @@ public class GovernmentApp {
             System.out.println("Welcome to Government Railway Crossing Home");
             System.out.println("We have " + this.controller.getCrossingsCount() + " Crossings in the DataBase");
             System.out.println("1: List Railway Crossings");
-            System.out.println("2: Search Railway Crossings");
-            System.out.println("3: Add Railway Crossing");
-            System.out.println("4: Delete Railway Crossing");
-            System.out.println("5: Export Data");
-            System.out.println("6: Import Data");
-            System.out.println("7: Close Goverment Application");
+            System.out.println("2: Add Railway Crossing");
+            System.out.println("3: Delete Railway Crossing");
+            System.out.println("4: Search Railway Crossings");
+            System.out.println("5: Update Status of Railway Crossing");
+            System.out.println("6: Export Data");
+            System.out.println("7: Import Data");
+            System.out.println("8: Close Goverment Application");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             choice = this.scanner.nextInt();
             switch(choice) {
@@ -126,27 +141,30 @@ public class GovernmentApp {
                     this.listCrossings();
                     break;
                 case 2:
-                    this.searchCrossing();
-                    break;
-                case 3:
                     this.addCrossing();
                     break;
-                case 4:
+                case 3:
                     this.deleteCrossing();
                     break;
+                case 4:
+                    this.searchCrossing();
+                    break;
                 case 5:
-                    this.controller.exportData();
+                    this.updateStatus();
                     break;
                 case 6:
-                    this.controller.importData();
+                    this.controller.exportData();
                     break;
                 case 7:
+                    this.controller.importData();
+                    break;
+                case 8:
                     System.out.println("Thank You for using Railway Crossing App");
                     break;
                 default:
                     System.err.println("Invalid Choice");
             }
-        } while(choice != 7);
+        } while(choice != 8);
 
     }
 

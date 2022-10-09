@@ -44,7 +44,7 @@ public class DB implements DAO {
             return true;
         } else {
             RailwayCrossing crossing = (RailwayCrossing)object;
-            this.crossings.put(crossing.getPersonInCharge().getEmail(), crossing);
+            this.crossings.put(crossing.getName(), crossing);
             return true;
         }
     }
@@ -56,7 +56,7 @@ public class DB implements DAO {
             return true;
         } else {
             RailwayCrossing crossing = (RailwayCrossing)object;
-            this.crossings.remove(crossing.getPersonInCharge().getEmail());
+            this.crossings.remove(crossing.getName());
             return true;
         }
     }

@@ -10,18 +10,18 @@ import java.util.LinkedHashMap;
 public class RailwayCrossing {
     String name;
     String address;
-    int status;
+    boolean status;
     User personInCharge;
     LinkedHashMap<String, String> schedules;
 
     public RailwayCrossing() {
         this.name = "";
         this.address = "";
-        this.status = 1;
+        this.status = true;
         this.schedules = new LinkedHashMap();
     }
 
-    public RailwayCrossing(String name, String address, int status, User personInCharge, LinkedHashMap<String, String> schedules) {
+    public RailwayCrossing(String name, String address, boolean status, User personInCharge, LinkedHashMap<String, String> schedules) {
         this.name = name;
         this.address = address;
         this.status = status;
@@ -45,12 +45,12 @@ public class RailwayCrossing {
         this.address = address;
     }
 
-    public int getStatus() {
-        return this.status;
+    public String getStatus() {
+        return this.status ? "OPEN" : "CLOSE";
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void flipStatus() {
+        this.status = !status;
     }
 
     public User getPersonInCharge() {
@@ -70,7 +70,7 @@ public class RailwayCrossing {
     }
 
     public String toString() {
-        String crossingStatus = this.status == 1 ? "OPEN" : "CLOSE";
+        String crossingStatus = this.status ? "OPEN" : "CLOSE";
         String railwayCrossingText = "~~~~~~~~~~~~~~~~~~~~~" + this.name + "~~~~~~~~~~~~~~~~~~~~\n" + "Crossing Name: " + this.name + "\n" + "Crossing Address: " + this.address + "\n" + "Crossing Status: " + crossingStatus + "\n" + "Crossing Schedule: " + this.schedules.toString() + "\n" + "Crossing Person InCharge: " + this.personInCharge.getName() + "\n" + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         return railwayCrossingText;
     }
