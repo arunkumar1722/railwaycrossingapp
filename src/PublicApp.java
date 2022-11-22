@@ -13,7 +13,7 @@ public class PublicApp {
     UserController controller = UserController.getInstance();
     RailwayCrossingController railController = RailwayCrossingController.getInstance();
     Scanner scanner;
-    UserDAO dao;
+    UserDAO dao = new UserDAO();
 
     private static PublicApp app;
 
@@ -39,7 +39,7 @@ public class PublicApp {
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
         user.setUserType(1);
-        if (this.controller.registerUser(user) && dao.insert(user) > 0) {
+        if (this.controller.registerUser(user) && this.dao.insert(user) > 0) {
             System.out.println(user.getName() + ", You have Registered Successfully..");
             System.out.println("Navigating to the Railway Crossing Application");
             this.home();
@@ -58,7 +58,7 @@ public class PublicApp {
         user.setPassword(this.scanner.nextLine());
         user.setUserType(1);
 
-        User loggedUser = dao.queryOne(user);
+        User loggedUser = this.dao.queryOne(user);
         if (this.controller.loginUser(user) && !loggedUser.getName().isEmpty()) {
             System.out.println(user.getName() + ", You have Logged In Successfully..");
             System.out.println("Navigating to the Railway Crossing Application");

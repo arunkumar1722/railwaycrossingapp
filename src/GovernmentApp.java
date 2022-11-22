@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class GovernmentApp {
     RailwayCrossingController controller = RailwayCrossingController.getInstance();
     Scanner scanner;
-    UserDAO dao;
-    RailwayCrossingDAO rcDao;
+    UserDAO dao = new UserDAO();
+    RailwayCrossingDAO rcDao = new RailwayCrossingDAO();
 
     private static GovernmentApp app;
 
@@ -63,7 +63,7 @@ public class GovernmentApp {
         String scheduleValue = this.scanner.nextLine();
         crossing.getSchedules().put(scheduleKey, scheduleValue);
         crossing.setPersonInCharge(user);
-        if (this.controller.addOrUpdateCrossing(crossing) && rcDao.insert(crossing) > 0) {
+        if (this.controller.addOrUpdateCrossing(crossing) && this.rcDao.insert(crossing) > 0) {
             System.out.println(crossing.getName() + " Added Successfully...");
         } else {
             System.err.println("Something Went Wrong. Please Try Again");
@@ -115,7 +115,7 @@ public class GovernmentApp {
         user.setEmail(this.scanner.nextLine());
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
-        User loggedUser = dao.queryOne(user);
+        User loggedUser = this.dao.queryOne(user);
         if (this.controller.loginUser(user) && !loggedUser.getName().isEmpty()) {
             System.out.println(user.getName() + ", You have Logged In Successfully..");
             System.out.println("Navigating to the Government Railway Crossing Application");
