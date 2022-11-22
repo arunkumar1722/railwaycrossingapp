@@ -3,6 +3,7 @@ import controller.RailwayCrossingController;
 import controller.UserController;
 import model.RailwayCrossing;
 import model.User;
+import dao.UserDAO;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -12,6 +13,8 @@ public class PublicApp {
     UserController controller = UserController.getInstance();
     RailwayCrossingController railController = RailwayCrossingController.getInstance();
     Scanner scanner;
+    UserDAO dao;
+
     private static PublicApp app;
 
     public static PublicApp getInstance() {
@@ -36,7 +39,7 @@ public class PublicApp {
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
         user.setUserType(1);
-        if (this.controller.registerUser(user)) {
+        if (this.controller.registerUser(user) && dao.insert(user) > 0) {
             System.out.println(user.getName() + ", You have Registered Successfully..");
             System.out.println("Navigating to the Railway Crossing Application");
             this.home();
@@ -54,7 +57,9 @@ public class PublicApp {
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
         user.setUserType(1);
-        if (this.controller.loginUser(user)) {
+
+        User loggedUser = dao.queryOne(user);
+        if (this.controller.loginUser(user) && !loggedUser.getName().isEmpty()) {
             System.out.println(user.getName() + ", You have Logged In Successfully..");
             System.out.println("Navigating to the Railway Crossing Application");
             this.home();

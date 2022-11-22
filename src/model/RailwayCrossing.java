@@ -7,6 +7,18 @@ package model;
 
 import java.util.LinkedHashMap;
 
+/*
+
+ 	CREATE TABLE RailwayCrossings(
+ 		rid INT PRIMARY KEY IDENTITY(1,1),
+ 		name NVARCHAR(256),
+ 		address NVARCHAR(256),
+ 		status NVARCHAR(10),
+ 		personInCharge NVARCHAR(256)
+ 	)
+
+ */
+
 public class RailwayCrossing {
     String name;
     String address;

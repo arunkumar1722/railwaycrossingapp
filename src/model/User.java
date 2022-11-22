@@ -7,6 +7,18 @@ package model;
 
 import java.io.Serializable;
 
+/*
+
+ 	CREATE TABLE Users(
+ 		uid INT PRIMARY KEY IDENTITY(1,1),
+ 		name NVARCHAR(256),
+ 		email NVARCHAR(256),
+ 		password NVARCHAR(20),
+ 		userType INT
+ 	)
+
+ */
+
 public class User implements Serializable {
     String name;
     String email;
@@ -64,6 +76,11 @@ public class User implements Serializable {
     }
 
     public boolean validate() {
-        return !this.email.isEmpty() && !this.password.isEmpty();
+
+        // Use Regular Expression Module to do validations :)
+        if(!email.contains("@") && !email.contains("."))
+            return false;
+
+        return !email.isEmpty() && !password.isEmpty();
     }
 }

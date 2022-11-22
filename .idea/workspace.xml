@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b2cd7e5-88eb-43ac-89a2-75e10a88db43" name="Default Changelist" comment="" />
+    <list default="true" id="6b2cd7e5-88eb-43ac-89a2-75e10a88db43" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dao/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/DB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/RailwayCrossingDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GovernmentApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GovernmentApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PublicApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/RailwayCrossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RailwayCrossing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +28,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/arunkumar1722/railwaycrossingapp.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="2Fbas1eIQhpoUuAcMV6NDwkiejK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -28,7 +45,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dao" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="RailwayCrossingApp" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -58,38 +80,108 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1664763998722">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.951@0.25.1680.951" timestamp="1664763998722" />
-    <state width="1358" height="247" key="GridCell.Tab.0.bottom" timestamp="1664764894612">
+    <state x="471" y="100" key="CommitChangelistDialog2" timestamp="1669087747036">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state width="1358" height="247" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1664764894612" />
-    <state width="1358" height="247" key="GridCell.Tab.0.center" timestamp="1664764894612">
+    <state x="471" y="100" key="CommitChangelistDialog2/0.25.1680.951@0.25.1680.951" timestamp="1669087747036" />
+    <state width="415" height="466" key="DebuggerActiveHint" timestamp="1664771495095">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="415" height="466" key="DebuggerActiveHint/0.0.1680.1050@0.0.1680.1050" timestamp="1664771495095" />
+    <state x="681" y="405" key="Github.ShareDialog" timestamp="1664766476005">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state width="1358" height="247" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1664764894612" />
-    <state width="1358" height="247" key="GridCell.Tab.0.left" timestamp="1664764894611">
+    <state x="681" y="405" key="Github.ShareDialog/0.25.1680.951@0.25.1680.951" timestamp="1664766476005" />
+    <state x="599" y="218" key="Github.UntrackedFilesDialog" timestamp="1664766484806">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state width="1358" height="247" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1664764894611" />
-    <state width="1358" height="247" key="GridCell.Tab.0.right" timestamp="1664764894612">
+    <state x="599" y="218" key="Github.UntrackedFilesDialog/0.25.1680.951@0.25.1680.951" timestamp="1664766484806" />
+    <state width="621" height="824" key="GridCell.Tab.0.bottom" timestamp="1665352535014">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state width="1358" height="247" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1664764894612" />
-    <state x="349" y="143" key="SettingsEditor" timestamp="1664765031216">
+    <state width="1638" height="363" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778236" />
+    <state width="621" height="824" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1665352535014" />
+    <state width="621" height="824" key="GridCell.Tab.0.center" timestamp="1665352535013">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state x="349" y="143" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1664765031216" />
-    <state x="517" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1664765064851">
+    <state width="1638" height="363" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778236" />
+    <state width="621" height="824" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1665352535013" />
+    <state width="621" height="824" key="GridCell.Tab.0.left" timestamp="1665352535013">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state x="517" y="336" key="com.intellij.ide.util.TipDialog/0.25.1680.951@0.25.1680.951" timestamp="1664765064851" />
-    <state x="503" y="264" width="674" height="486" key="find.popup" timestamp="1664764443808">
+    <state width="1638" height="363" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778235" />
+    <state width="621" height="824" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1665352535013" />
+    <state width="621" height="824" key="GridCell.Tab.0.right" timestamp="1665352535014">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state x="503" y="264" width="674" height="486" key="find.popup/0.25.1680.951@0.25.1680.951" timestamp="1664764443808" />
+    <state width="1638" height="363" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778236" />
+    <state width="621" height="824" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1665352535014" />
+    <state width="621" height="824" key="GridCell.Tab.1.bottom" timestamp="1665352535014">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778237" />
+    <state width="621" height="824" key="GridCell.Tab.1.bottom/0.25.1680.951@0.25.1680.951" timestamp="1665352535014" />
+    <state width="621" height="824" key="GridCell.Tab.1.center" timestamp="1665352535014">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778237" />
+    <state width="621" height="824" key="GridCell.Tab.1.center/0.25.1680.951@0.25.1680.951" timestamp="1665352535014" />
+    <state width="621" height="824" key="GridCell.Tab.1.left" timestamp="1665352535014">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778237" />
+    <state width="621" height="824" key="GridCell.Tab.1.left/0.25.1680.951@0.25.1680.951" timestamp="1665352535014" />
+    <state width="621" height="824" key="GridCell.Tab.1.right" timestamp="1665352535014">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778237" />
+    <state width="621" height="824" key="GridCell.Tab.1.right/0.25.1680.951@0.25.1680.951" timestamp="1665352535014" />
+    <state x="349" y="143" key="SettingsEditor" timestamp="1664766441312">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="349" y="143" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1664766441312" />
+    <state x="440" y="262" key="Vcs.Push.Dialog.v2" timestamp="1669087693482">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="440" y="262" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1664772760543" />
+    <state x="440" y="262" key="Vcs.Push.Dialog.v2/0.25.1680.951@0.25.1680.951" timestamp="1669087693482" />
+    <state x="517" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1669080947515">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="517" y="336" key="com.intellij.ide.util.TipDialog/0.25.1680.951@0.25.1680.951" timestamp="1669080947515" />
+    <state x="503" y="264" width="674" height="486" key="find.popup" timestamp="1669085200792">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="503" y="264" width="674" height="537" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1664772577123" />
+    <state x="503" y="264" width="674" height="486" key="find.popup/0.25.1680.951@0.25.1680.951" timestamp="1669085200792" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/db/DB.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
