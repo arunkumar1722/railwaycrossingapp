@@ -1,19 +1,15 @@
 
-import controller.RailwayCrossingController;
-import controller.UserController;
+import dao.RailwayCrossingDAO;
 import model.RailwayCrossing;
 import model.User;
 import dao.UserDAO;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.Scanner;
+
+import java.util.*;
 
 public class PublicApp {
-    UserController controller = UserController.getInstance();
-    RailwayCrossingController railController = RailwayCrossingController.getInstance();
     Scanner scanner;
     UserDAO dao = new UserDAO();
+    RailwayCrossingDAO rcDao = new RailwayCrossingDAO();
 
     private static PublicApp app;
 
@@ -39,7 +35,7 @@ public class PublicApp {
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
         user.setUserType(1);
-        if (this.controller.registerUser(user) && this.dao.insert(user) > 0) {
+        if (this.dao.insert(user) > 0) {
             System.out.println(user.getName() + ", You have Registered Successfully..");
             System.out.println("Navigating to the Railway Crossing Application");
             this.home();
@@ -59,7 +55,7 @@ public class PublicApp {
         user.setUserType(1);
 
         User loggedUser = this.dao.queryOne(user);
-        if (this.controller.loginUser(user) && !loggedUser.getName().isEmpty()) {
+        if (!loggedUser.getName().isEmpty()) {
             System.out.println(user.getName() + ", You have Logged In Successfully..");
             System.out.println("Navigating to the Railway Crossing Application");
             this.home();
@@ -70,25 +66,28 @@ public class PublicApp {
     }
 
     void listCrossings() {
-        Map<String, ?> crossings = this.railController.fetchCrossings();
-        Iterator var3 = crossings.keySet().iterator();
+        List<RailwayCrossing> crossings = this.rcDao.query();
 
-        while(var3.hasNext()) {
-            String key = (String)var3.next();
-            System.out.println(crossings.get(key));
+        for (Iterator<RailwayCrossing> iter = crossings.iterator(); iter.hasNext(); ) {
+            RailwayCrossing crossing = iter.next();
+            System.out.println(crossing);
             System.out.println("-------------------------------");
         }
 
     }
 
     void sortCrossings() {
-        Map<String, ?> crossings = this.railController.fetchCrossings();
-        Map<String, ?> sortedCrossings = new TreeMap<>(crossings);
-        Iterator var3 = sortedCrossings.keySet().iterator();
+        List<RailwayCrossing> crossings = this.rcDao.query();
+        Collections.sort(crossings, new Comparator<RailwayCrossing>() {
+            @Override
+            public int compare(final RailwayCrossing object1, final RailwayCrossing object2) {
+                return object1.getName().compareTo(object2.getName());
+            }
+        });
 
-        while(var3.hasNext()) {
-            String key = (String)var3.next();
-            System.out.println(sortedCrossings.get(key));
+        for (Iterator<RailwayCrossing> iter = crossings.iterator(); iter.hasNext(); ) {
+            RailwayCrossing crossing = iter.next();
+            System.out.println(crossing);
             System.out.println("-------------------------------");
         }
 
@@ -96,10 +95,11 @@ public class PublicApp {
 
     void searchCrossing() {
         this.scanner.nextLine();
+        RailwayCrossing crossing = new RailwayCrossing();
         System.out.println("Enter Railway Crossing Name: ");
-        String crossingName = this.scanner.nextLine();
-        RailwayCrossing retrievedCrossing = this.railController.fetchCrossing(crossingName);
-        if (retrievedCrossing!=null) {
+        crossing.setName(this.scanner.nextLine());
+        RailwayCrossing retrievedCrossing = this.rcDao.queryOne(crossing);
+        if (!retrievedCrossing.getName().isEmpty()) {
             System.out.println(retrievedCrossing);
         } else {
             System.err.println("Railway Crossing not found");
@@ -108,10 +108,11 @@ public class PublicApp {
 
     void displayStatus() {
         this.scanner.nextLine();
+        RailwayCrossing crossing = new RailwayCrossing();
         System.out.println("Enter Railway Crossing Name: ");
-        String crossingName = this.scanner.nextLine();
-        RailwayCrossing retrievedCrossing = this.railController.fetchCrossing(crossingName);
-        if (retrievedCrossing!=null) {
+        crossing.setName(this.scanner.nextLine());
+        RailwayCrossing retrievedCrossing = this.rcDao.queryOne(crossing);
+        if (!retrievedCrossing.getName().isEmpty()) {
             System.out.println("Railway Crossing Status: " + retrievedCrossing.getStatus());
         } else {
             System.err.println("Railway Crossing not found");
@@ -156,7 +157,7 @@ public class PublicApp {
     void startPublicApp() {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Welcome User");
-        System.out.println("We have " + this.controller.getUserCount() + " Users in the DataBase");
+        System.out.println("We have " + this.dao.count() + " Users in the DataBase");
         System.out.println("1: Register");
         System.out.println("2: Login");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

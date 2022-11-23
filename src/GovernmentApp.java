@@ -1,16 +1,14 @@
 
 
-import controller.RailwayCrossingController;
 import model.RailwayCrossing;
 import model.User;
 import dao.UserDAO;
 import dao.RailwayCrossingDAO;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
 
 public class GovernmentApp {
-    RailwayCrossingController controller = RailwayCrossingController.getInstance();
     Scanner scanner;
     UserDAO dao = new UserDAO();
     RailwayCrossingDAO rcDao = new RailwayCrossingDAO();
@@ -30,12 +28,11 @@ public class GovernmentApp {
     }
 
     void listCrossings() {
-        Map<String, ?> crossings = this.controller.fetchCrossings();
-        Iterator var3 = crossings.keySet().iterator();
+        List<RailwayCrossing> crossings = this.rcDao.query();
 
-        while(var3.hasNext()) {
-            String key = (String)var3.next();
-            System.out.println(crossings.get(key));
+        for (Iterator<RailwayCrossing> iter = crossings.iterator(); iter.hasNext(); ) {
+            RailwayCrossing crossing = iter.next();
+            System.out.println(crossing);
             System.out.println("-------------------------------");
         }
 
@@ -45,6 +42,7 @@ public class GovernmentApp {
         this.scanner.nextLine();
         User user = new User();
         RailwayCrossing crossing = new RailwayCrossing();
+
         System.out.println("Enter Person InCharge Details");
         System.out.println("Enter Name: ");
         user.setName(this.scanner.nextLine());
@@ -53,6 +51,13 @@ public class GovernmentApp {
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
         user.setUserType(3);
+
+        if(this.dao.insert(user)>0){
+            System.out.println("User Added");
+        }else{
+            System.out.println("Something went wrong.. user not added");
+        }
+
         System.out.println("Enter Railway Crossing Details");
         System.out.println("Enter Crossing Name: ");
         crossing.setName(this.scanner.nextLine());
@@ -63,7 +68,8 @@ public class GovernmentApp {
         String scheduleValue = this.scanner.nextLine();
         crossing.getSchedules().put(scheduleKey, scheduleValue);
         crossing.setPersonInCharge(user);
-        if (this.controller.addOrUpdateCrossing(crossing) && this.rcDao.insert(crossing) > 0) {
+
+        if (this.rcDao.insert(crossing) > 0) {
             System.out.println(crossing.getName() + " Added Successfully...");
         } else {
             System.err.println("Something Went Wrong. Please Try Again");
@@ -73,10 +79,11 @@ public class GovernmentApp {
 
     void deleteCrossing() {
         this.scanner.nextLine();
+        RailwayCrossing crossing = new RailwayCrossing();
         System.out.println("Enter Railway Crossing Name: ");
-        String crossingName = this.scanner.nextLine();
-        RailwayCrossing retrievedCrossing = this.controller.fetchCrossing(crossingName);
-        if (retrievedCrossing!=null && this.controller.deleteCrossing(retrievedCrossing)) {
+        crossing.setName(this.scanner.nextLine());
+        RailwayCrossing retrievedCrossing = this.rcDao.queryOne(crossing);
+        if (!retrievedCrossing.getName().isEmpty() && this.rcDao.delete(crossing) > 0) {
             System.out.println(retrievedCrossing.getName() + " Deleted Successfully...");
         } else {
             System.err.println("Railway Crossing not found");
@@ -85,10 +92,11 @@ public class GovernmentApp {
 
     void searchCrossing() {
         this.scanner.nextLine();
+        RailwayCrossing crossing = new RailwayCrossing();
         System.out.println("Enter Railway Crossing Name: ");
-        String crossingName = this.scanner.nextLine();
-        RailwayCrossing retrievedCrossing = this.controller.fetchCrossing(crossingName);
-        if (retrievedCrossing!=null) {
+        crossing.setName(this.scanner.nextLine());
+        RailwayCrossing retrievedCrossing = this.rcDao.queryOne(crossing);
+        if (!retrievedCrossing.getName().isEmpty()) {
             System.out.println(retrievedCrossing);
         } else {
             System.err.println("Railway Crossing not found");
@@ -97,11 +105,11 @@ public class GovernmentApp {
 
     void updateStatus() {
         this.scanner.nextLine();
+        RailwayCrossing crossing = new RailwayCrossing();
         System.out.println("Enter Railway Crossing Name: ");
-        String crossingName = this.scanner.nextLine();
-        RailwayCrossing retrievedCrossing = this.controller.fetchCrossing(crossingName);
-        if (retrievedCrossing!=null) {
-            retrievedCrossing.flipStatus();
+        crossing.setName(this.scanner.nextLine());
+        RailwayCrossing retrievedCrossing = this.rcDao.queryOne(crossing);
+        if (!retrievedCrossing.getName().isEmpty() && retrievedCrossing.flipStatus() != null && this.rcDao.update(retrievedCrossing) > 0) {
             System.out.println("Switched Railway Crossing Status to " + retrievedCrossing.getStatus());
             System.out.println(retrievedCrossing);
         } else {
@@ -115,8 +123,9 @@ public class GovernmentApp {
         user.setEmail(this.scanner.nextLine());
         System.out.println("Enter Password: ");
         user.setPassword(this.scanner.nextLine());
+
         User loggedUser = this.dao.queryOne(user);
-        if (this.controller.loginUser(user) && !loggedUser.getName().isEmpty()) {
+        if (!loggedUser.getName().isEmpty()) {
             System.out.println(user.getName() + ", You have Logged In Successfully..");
             System.out.println("Navigating to the Government Railway Crossing Application");
             this.home();
@@ -131,15 +140,13 @@ public class GovernmentApp {
         do {
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("Welcome to Government Railway Crossing Home");
-            System.out.println("We have " + this.controller.getCrossingsCount() + " Crossings in the DataBase");
+            System.out.println("We have " + this.rcDao.count() + " Crossings in the DataBase");
             System.out.println("1: List Railway Crossings");
             System.out.println("2: Add Railway Crossing");
             System.out.println("3: Delete Railway Crossing");
             System.out.println("4: Search Railway Crossings");
             System.out.println("5: Update Status of Railway Crossing");
-            System.out.println("6: Export Data");
-            System.out.println("7: Import Data");
-            System.out.println("8: Close Goverment Application");
+            System.out.println("6: Close Government Application");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             choice = this.scanner.nextInt();
             switch(choice) {
@@ -159,12 +166,6 @@ public class GovernmentApp {
                     this.updateStatus();
                     break;
                 case 6:
-                    this.controller.exportData();
-                    break;
-                case 7:
-                    this.controller.importData();
-                    break;
-                case 8:
                     System.out.println("Thank You for using Railway Crossing App");
                     break;
                 default:

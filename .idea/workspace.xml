@@ -3,8 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="6b2cd7e5-88eb-43ac-89a2-75e10a88db43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/GovernmentApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/railwaycrossingapp/GovernmentApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/PublicApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/railwaycrossingapp/PublicApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/controller/RailwayCrossingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/db/DAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/db/DB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/model/RailwayCrossing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/railwaycrossingapp/model/RailwayCrossing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/railwaycrossingapp/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/railwaycrossingapp/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GovernmentApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GovernmentApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PublicApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/RailwayCrossingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/RailwayCrossingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/RailwayCrossingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/DB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/RailwayCrossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RailwayCrossing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669087840978</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implement Database Connectivity">
+      <created>1669091319677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669091319677</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +130,10 @@
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="304" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.951@0.25.1680.951" timestamp="1669090460978" />
+    <state x="653" y="214" key="#com.intellij.ide.util.MemberChooser" timestamp="1669168417500">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="653" y="214" key="#com.intellij.ide.util.MemberChooser/0.25.1680.951@0.25.1680.951" timestamp="1669168417500" />
     <state x="471" y="100" key="CommitChangelistDialog2" timestamp="1669087840734">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
@@ -123,26 +150,26 @@
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="599" y="218" key="Github.UntrackedFilesDialog/0.25.1680.951@0.25.1680.951" timestamp="1664766484806" />
-    <state width="454" height="824" key="GridCell.Tab.0.bottom" timestamp="1669090319611">
+    <state width="29" height="824" key="GridCell.Tab.0.bottom" timestamp="1669169110661">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state width="1638" height="363" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778236" />
-    <state width="454" height="824" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1669090319611" />
-    <state width="454" height="824" key="GridCell.Tab.0.center" timestamp="1669090319610">
+    <state width="29" height="824" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1669169110661" />
+    <state width="29" height="824" key="GridCell.Tab.0.center" timestamp="1669169110660">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state width="1638" height="363" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778236" />
-    <state width="454" height="824" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1669090319610" />
-    <state width="454" height="824" key="GridCell.Tab.0.left" timestamp="1669090319610">
+    <state width="29" height="824" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1669169110660" />
+    <state width="29" height="824" key="GridCell.Tab.0.left" timestamp="1669169110659">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state width="1638" height="363" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778235" />
-    <state width="454" height="824" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1669090319610" />
-    <state width="454" height="824" key="GridCell.Tab.0.right" timestamp="1669090319611">
+    <state width="29" height="824" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1669169110659" />
+    <state width="29" height="824" key="GridCell.Tab.0.right" timestamp="1669169110660">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state width="1638" height="363" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1664772778236" />
-    <state width="454" height="824" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1669090319611" />
+    <state width="29" height="824" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1669169110660" />
     <state width="621" height="824" key="GridCell.Tab.1.bottom" timestamp="1665352535014">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
@@ -172,14 +199,14 @@
     </state>
     <state x="440" y="262" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1664772760543" />
     <state x="440" y="262" key="Vcs.Push.Dialog.v2/0.25.1680.951@0.25.1680.951" timestamp="1669088277755" />
-    <state x="517" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1669080947515">
+    <state x="517" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1669168087992">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
-    <state x="517" y="336" key="com.intellij.ide.util.TipDialog/0.25.1680.951@0.25.1680.951" timestamp="1669080947515" />
-    <state x="503" y="264" width="674" height="486" key="find.popup" timestamp="1669085200792">
+    <state x="517" y="336" key="com.intellij.ide.util.TipDialog/0.25.1680.951@0.25.1680.951" timestamp="1669168087992" />
+    <state x="503" y="264" width="674" height="486" key="find.popup" timestamp="1669167725701">
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="503" y="264" width="674" height="537" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1664772577123" />
-    <state x="503" y="264" width="674" height="486" key="find.popup/0.25.1680.951@0.25.1680.951" timestamp="1669085200792" />
+    <state x="503" y="264" width="674" height="486" key="find.popup/0.25.1680.951@0.25.1680.951" timestamp="1669167725701" />
   </component>
 </project>

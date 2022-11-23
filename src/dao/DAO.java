@@ -10,6 +10,7 @@ public interface DAO<T> {
     int update(T object);
     int delete(T object);
     T queryOne(T object);
+    int count();
     List<T> query();	  // eg return ArrayList of Objects
 
 }
